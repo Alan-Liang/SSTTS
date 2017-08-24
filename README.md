@@ -11,8 +11,8 @@ sstts.ipaddress="127.0.0.1";
 sstts.startsvc();
 //wait a moment
 //open localhost:8080 in browser
-sscs.stopsvc();
-console.log(sscs.tobjs);
+sstts.stopsvc();
+console.log(sstts.tobjs);
 ```
 
 ## Advanced
