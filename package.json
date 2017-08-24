@@ -1,0 +1,31 @@
+{
+  "name": "sstts",
+  "version": "0.0.6",
+  "description": "Simple and Slow Table Testing Service",
+  "keywords": [
+    "Test"
+  ],
+  "author": "Alan?Liang <yalun0liang@gmail.com> (http://alan.liangcn.ml)",
+  "homepage": "https://github.com/Alan-Liang/SSTTS",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alan-Liang/SSTTS.git"
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+  "dependencies": {
+    "mime": "1.3.6"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+  "license": "GPL-3.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Alan-Liang/SSCS/issues"
+  }
+}

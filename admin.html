@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SSTTS | Admin</title>
+</head>
+
+<body>
+<h1>SSTTS | Admin</h1>
+<hr />
+<h2>Add Table:</h2>
+<form name="form1" method="get" action="/admin/add">
+  tid:<input type="text" name="tid" id="tid" /><br />
+  width:<input type="text" name="width" id="width" /><br />
+  height:<input type="text" name="height" id="height" /><br />
+  startup:<input type="text" name="startup" id="startup" /><br />
+  password:<input type="password" name="password" id="password" /><br />
+  <button type="submit">Apply</button>
+</form>
+<hr />
+<h2>Remove Table:</h2>
+<form name="form2" method="get" action="/admin/remove">
+  tid:<input type="text" name="tid" id="tid2" /><br />
+  password:<input type="password" name="password" id="password2" /><br />
+  <button type="submit">Apply</button>
+</form>
+</body>
+</html>

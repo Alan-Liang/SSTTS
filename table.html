@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Table Test Page</title>
+<style>
+#main, #main td{
+	border:1px #000 solid;
+}
+</style>
+</head>
+
+<body>
+<table id="main">
+</table>
+<script src="./utils.js"></script>
+<script>
+var heart=1000;
+window._id=getParam("tid");
+function update(i,j){
+	httppost("/webapi/add?tid="+window._id,
+		{
+			i:i,j:j,
+			data:prompt("data of "+i+" "+j+":",
+				$("cell"+i+"_"+j).innerHTML
+			)
+		},
+		function(){}
+	);
+}
+httpget("./webapi/history?tid="+window._id,function(stat,resp){
+	var obj;
+	try{
+		obj=JSON.parse(resp);
+	}catch(e){console.log(e);}
+	window._tableobj=obj;
+	var hdoc="";
+	for(var i=0;i<obj.height;i++){
+		hdoc+="<tr>";
+		for(var j=0;j<obj.width;j++){
+			hdoc+="<td id=\"cell"+i+"_"+j+
+				"\" onclick=\"update("+i+","+j+");\">"+
+				obj.data[i][j]+"</td>";
+		}
+		hdoc+="</tr>";
+	}
+	$("main").innerHTML=hdoc;
+});
+setInterval(function(){
+	httpget("./webapi/new?tid="+window._id+"&statid="+window._tableobj.statid,function(stat,resp){
+		var obj=JSON.parse(resp);
+		if(obj.changed){
+			var hdoc="";
+			for(var i=0;i<window._tableobj.height;i++){
+				hdoc+="<tr>";
+				for(var j=0;j<window._tableobj.width;j++){
+					hdoc+="<td id=\"cell"+i+"_"+j+
+					"\" onclick=\"update("+i+","+j+");\">"+
+					obj.data[i][j]+"</td>";
+				}
+				hdoc+="</tr>";
+			}
+			$("main").innerHTML=hdoc;
+			window._tableobj.statid=obj.statid;
+		}
+	});
+},heart);
+</script>
+</body>
+</html>
