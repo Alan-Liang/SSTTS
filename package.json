@@ -1,6 +1,6 @@
 {
   "name": "sstts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple and Slow Table Testing Service",
   "keywords": [
     "Test"
@@ -26,6 +26,6 @@
     "start": "node server.js"
   },
   "bugs": {
-    "url": "https://github.com/Alan-Liang/SSCS/issues"
+    "url": "https://github.com/Alan-Liang/SSTTS/issues"
   }
 }
