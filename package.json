@@ -1,6 +1,6 @@
 {
   "name": "sstts",
-  "version": "0.0.6",
+  "version": "0.0.1",
   "description": "Simple and Slow Table Testing Service",
   "keywords": [
     "Test"
