@@ -8,6 +8,7 @@ A testing service by Alan?Liang using node.js
 var sstts=require("sstts");
 sstts.port=8080;
 sstts.ipaddress="127.0.0.1";
+sstts.adminPwd="password_of_admin";
 sstts.startsvc();
 //wait a moment
 //open localhost:8080 in browser

@@ -10,7 +10,7 @@
 
 self.adminPwd  = "foobar";
 self.ipaddress = "127.0.0.1";
-self.port      = 50082;
+self.port      = 8080;
 
 self.tlist=[];
 self.tobjs={};
